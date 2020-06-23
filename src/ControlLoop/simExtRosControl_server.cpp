@@ -113,7 +113,6 @@ void ROS_server::mainScriptAboutToBeCalled()
 void ROS_server::simulationAboutToStart()
 {
     assert(sm_myRobotHw);
-
     sm_myRobotHw->init();
 }
 

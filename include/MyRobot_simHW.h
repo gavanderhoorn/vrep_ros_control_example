@@ -29,11 +29,11 @@ enum MrJointsEnum
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// \brief This is the hardware interface for MyRobot simulated in vrep.
-class MyRobot_vrepHW : public hardware_interface::RobotHW
+/// \brief This is the hardware interface for MyRobot simulated in sim.
+class MyRobot_simHW : public hardware_interface::RobotHW
 {
 public:
-    MyRobot_vrepHW();
+    MyRobot_simHW();
 
     bool init();
 
@@ -43,8 +43,8 @@ public:
 protected:
     static std::string sm_jointsName[MR_JOINTS_NUM];
 
-    // Vrep handles.
-    int m_vrepJointsHandle[MR_JOINTS_NUM];
+    // sim handles.
+    int m_simJointsHandle[MR_JOINTS_NUM];
 
     // Interfaces.
     double m_cmd[MR_JOINTS_NUM];
