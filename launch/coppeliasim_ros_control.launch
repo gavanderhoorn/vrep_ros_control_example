@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find coppeliasim_ros_control)/urdf/MyRobot.urdf.xacro'" />
+  <param name="/use_sim_time" value="true"/>
+
+  <!-- <param name="robot_description" command="$(find xacro)/xacro.py '$(find coppeliasim_ros_control)/urdf/mmrobot.urdf.xacro'" /> -->
 
   <!-- Robot state publisher node -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
@@ -10,8 +12,12 @@
   </node>
 
   <!-- Start controllers -->
-  <rosparam file="$(find coppeliasim_ros_control)/control/mr_controller.yaml" command="load"/> <!-- Joint trajectory controller (this is not a low-level controller) -->
+  <rosparam file="$(find coppeliasim_ros_control)/control/mm_controller.yaml" command="load"/> <!-- Joint trajectory controller (this is not a low-level controller) -->
 
-  <node name="controller_manager_spawner" pkg="controller_manager" type="spawner" args="mr_controller" />
-
+  <node name="controller_manager_spawner" pkg="controller_manager" type="spawner" args="
+        boxer_velocity_controller
+        boxer_joint_publisher
+        panda_joint_publisher
+        velocity_joint_trajectory_controller"/>
+        
 </launch>
