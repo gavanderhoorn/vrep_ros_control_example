@@ -10,10 +10,18 @@ namespace MR
 
 
 std::string MyRobot_simHW::sm_jointsName[MR_JOINTS_NUM] = {
-    "front_left_wheel_joint",
-    "back_left_wheel_joint",
-    "back_right_wheel_joint",
-    "front_right_wheel_joint"
+    "wheel_left_joint",
+    "wheel_right_joint",
+    "mmrobot_joint1",
+    "mmrobot_joint2",
+    "mmrobot_joint3",
+    "mmrobot_joint4",
+    "mmrobot_joint5",
+    "mmrobot_joint6",
+    "mmrobot_joint7",
+    "mmrobot_finger_joint1",
+    "mmrobot_finger_joint2",
+    "lift_joint"
 };
 
 

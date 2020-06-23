@@ -11,21 +11,29 @@ namespace MR
 
 enum MrJointsEnum
 {
-    FRONT_LEFT_WHEEL_JOINT = 0,
-    BACK_LEFT_WHEEL_JOINT,
-    BACK_RIGHT_WHEEL_JOINT,
-    FRONT_RIGHT_WHEEL_JOINT,
+    WHEEL_LEFT_JOINT = 0,
+    WHEEL_RIGHT_JOINT,
+    MMROBOT_JOINT1,
+    MMROBOT_JOINT2,
+    MMROBOT_JOINT3,
+    MMROBOT_JOINT4,
+    MMROBOT_JOINT5,
+    MMROBOT_JOINT6,
+    MMROBOT_JOINT7,
+    MMROBOT_FINGER_JOINT1,
+    MMROBOT_FINGER_JOINT2,
+    LIFT_JOINT,
 
     MR_JOINTS_NUM
 };
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// \brief This is the hardware interface for MyRobot simulated in coppeliasim.
-class MyRobot_simHW : public hardware_interface::RobotHW
+/// \brief This is the hardware interface for MyRobot simulated in vrep.
+class MyRobot_vrepHW : public hardware_interface::RobotHW
 {
 public:
-    MyRobot_simHW();
+    MyRobot_vrepHW();
 
     bool init();
 
@@ -35,8 +43,8 @@ public:
 protected:
     static std::string sm_jointsName[MR_JOINTS_NUM];
 
-    // sim handles.
-    int m_simJointsHandle[MR_JOINTS_NUM];
+    // Vrep handles.
+    int m_vrepJointsHandle[MR_JOINTS_NUM];
 
     // Interfaces.
     double m_cmd[MR_JOINTS_NUM];
