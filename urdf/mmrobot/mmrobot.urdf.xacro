@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mmrobot_description">
+  <xacro:arg name="robot_name" default="mmrobot"/>
+  <xacro:arg name="panda_hi" default="PositionJointInterface"/>
+
+
+  <xacro:include filename="boxer.urdf.xacro"/>
+  <xacro:include filename="panda_arm_hand.urdf.xacro"/>
+
+  <!-- Boxer -->
+  <xacro:boxer_description/>
+  <xacro:boxer_gazebo robot_namespace="$(arg robot_name)"/>
+
+  <!-- Panda Arm -->
+
+  <xacro:panda_arm arm_id='$(arg robot_name)' connected_to='top_mount' xyz='-0.15 0 0' />
+  <xacro:hand ns="$(arg robot_name)" rpy="0 0 ${-pi/4}" connected_to="$(arg robot_name)_link8"/>
+  <xacro:panda_gazebo robot_name="$(arg robot_name)" />
+  <xacro:panda_transmission robot_name="$(arg robot_name)" load_hand="true" hi="$(arg panda_hi)"/>
+
+</robot>
+
