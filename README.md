@@ -17,7 +17,7 @@ The following instructions assume that a catkin workspace has been created at `$
  cd $HOME/catkin_ws/src
 
 # Clone Coppeliasim_ros_control pkg 
- git clone https://github.com/tud-cor/coppeliasim_ros_control
+ git clone https://github.com/mahmoud-a-ali/coppeliasim_ros_control
 
 # change to the main Catkin workspace
  cd ..
@@ -33,7 +33,7 @@ The following instructions assume that a catkin workspace has been created at `$
 The generated plugin should be loaded while starting coppeliasim, this can be done by copying the plugin 'libsimExtRosControl.so' to the main directory of Coppeliasim `$HOME/CoppeliaSim`
 ```
 # Copy the generated plugin to CoppeliaSim directory
-cp  $HOME/catkin_ws/devel/lib/libsimExtRosControl.so  ~/CoppeliaSim/
+cp  $HOME/catkin_ws/devel/lib/libsimExtRosControl.so  $HOME/CoppeliaSim/
 ```
 In a new terminal start a ros master before you start CoppelliaSim
 ```
