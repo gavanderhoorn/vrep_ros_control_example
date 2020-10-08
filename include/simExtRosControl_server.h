@@ -1,10 +1,7 @@
 #pragma once
 #include <ros/ros.h>
-#include <std_msgs/Int32.h>
-#include <std_msgs/String.h>
 
 // API services:
-#include "vrep_skeleton_msg_and_srv/displayText.h"
 #include <transmission_interface/transmission_parser.h>
 
 

@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(coppeliasim_ros_control)
 
-find_package(catkin REQUIRED COMPONENTS roscpp vrep_common vrep_skeleton_msg_and_srv controller_manager transmission_interface control_toolbox joint_limits_interface urdf hardware_interface)
+# 
+find_package(catkin REQUIRED COMPONENTS roscpp  controller_manager 
+    transmission_interface control_toolbox joint_limits_interface urdf 
+    hardware_interface)
 
 ################################################
 # List sources.
@@ -24,8 +27,8 @@ set(${PROJECT_NAME}_sources
 )
 
 catkin_package(
-               CATKIN_DEPENDS roscpp rosconsole std_msgs roslib
-               DEPENDS roscpp rosconsole std_msgs roslib)
+               CATKIN_DEPENDS roscpp rosconsole  roslib
+               DEPENDS roscpp rosconsole  roslib)
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
